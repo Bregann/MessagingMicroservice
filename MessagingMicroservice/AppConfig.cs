@@ -3,13 +3,10 @@ using Serilog;
 
 namespace MessagingMicroservice
 {
-    public class AppConfig_Example
+    public class AppConfig
     {
-#if DEBUG
-        public static string ConnectionString { get; private set; } = "";
-#else
-        public static string ConnectionString { get; private set; } = "";
-#endif
+        public static string ConnectionString { get; private set; } = Environment.GetEnvironmentVariable("MMSConnString");
+
         public static string SendGridApiKey { get; private set; } = "";
         public static string HFConnectionString { get; private set; } = "";
         public static string ProjectMonitorKey { get; private set; } = "";

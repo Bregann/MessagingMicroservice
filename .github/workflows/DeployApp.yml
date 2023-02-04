@@ -1,6 +1,9 @@
 name: Build and Package
 
-on: [push]
+on:
+  push:
+    branches:
+      - 'main'
 
 env:
   DOTNET_CLI_TELEMETRY_OPTOUT: 1

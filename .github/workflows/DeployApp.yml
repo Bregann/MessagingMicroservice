@@ -4,8 +4,7 @@ on: [push]
 
 env:
   DOTNET_CLI_TELEMETRY_OPTOUT: 1
-  CONNSTRING: {{ secrets.ENV }}
-  FILEPATH: {{ secrets.FILE_PATH }}
+  
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -59,7 +58,7 @@ jobs:
         username: ${{ secrets.SSH_USERNAME }}
         key: ${{ secrets.KEY }}
         script: |
-          docker run -d -p 5002:5000 -v $FILEPATH:/Logs -e MMSConnString=$CONNSTRING --name messagingmicroservice messagingmicroservice:latest
+          docker run -d -p 5002:5000 -v ${{ secrets.FILE_PATH }}:/Logs --env MMSConnString='${{ secrets.ENV }}' --name messagingmicroservice messagingmicroservice:latest
 
     - name: Clean Up The Tar File
       uses: appleboy/ssh-action@v0.1.7

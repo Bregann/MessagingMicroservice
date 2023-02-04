@@ -37,11 +37,7 @@ jobs:
         username: ${{ secrets.SSH_USERNAME }}
         key: ${{ secrets.KEY }}
         script: |
-          running=$(docker ps --filter name=messagingmicroservice --format '{{.Names}}')
-          if [[ $running == messagingmicroservice ]]; then
-            docker stop messagingmicroservice
-            docker rm messagingmicroservice
-          fi
+            docker stop messagingmicroservice || true && docker rm messagingmicroservice || true
     - name: Load New Docker Image
       uses: appleboy/ssh-action@v0.1.7
       with:

@@ -61,7 +61,7 @@ jobs:
         script: |
           docker run -d -p 5002:5000 -v $FILEPATH:/Logs -e MMSConnString=$CONNSTRING --name hangfiredashboard messagingmicroservice:latest
 		  
-	  - name: Clean Up The Tar File
+    - name: Clean Up The Tar File
       uses: appleboy/ssh-action@v0.1.7
       with:
         host: ${{ secrets.SSH_HOST }}

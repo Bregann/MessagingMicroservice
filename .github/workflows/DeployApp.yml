@@ -58,7 +58,7 @@ jobs:
         username: ${{ secrets.SSH_USERNAME }}
         key: ${{ secrets.KEY }}
         script: |
-          docker run -d -p 5002:5000 -v '${{ secrets.FILE_PATH }}':/Logs --env MMSConnString='${{ secrets.ENV }}' --name hangfiredashboard messagingmicroservice:latest
+          docker run -d -p 5002:5000 -v ${{ secrets.FILE_PATH }}:/Logs -e MMSConnString=${{ secrets.ENV }} --name hangfiredashboard messagingmicroservice:latest
 		  
 	  - name: Clean Up The Tar File
       uses: appleboy/ssh-action@v0.1.7

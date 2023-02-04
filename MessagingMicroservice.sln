@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessagingMicroservice", "MessagingMicroservice\MessagingMicroservice.csproj", "{DA0667F7-C457-4708-9614-574D8A98F1D9}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BreganUtils", "..\Bregan-Utils-Public\BreganUtils\BreganUtils.csproj", "{F41E78C5-CF17-44E2-BDF9-09D7CB556E98}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MessagingMicroservice", "MessagingMicroservice\MessagingMicroservice.csproj", "{DA0667F7-C457-4708-9614-574D8A98F1D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +15,6 @@ Global
 		{DA0667F7-C457-4708-9614-574D8A98F1D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA0667F7-C457-4708-9614-574D8A98F1D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA0667F7-C457-4708-9614-574D8A98F1D9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F41E78C5-CF17-44E2-BDF9-09D7CB556E98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F41E78C5-CF17-44E2-BDF9-09D7CB556E98}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F41E78C5-CF17-44E2-BDF9-09D7CB556E98}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F41E78C5-CF17-44E2-BDF9-09D7CB556E98}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

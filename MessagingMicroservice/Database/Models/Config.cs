@@ -16,6 +16,12 @@ namespace MessagingMicroservice.Database.Models
         public string? HFConnectionString { get; set; }
 
         [Required]
+        public string HangfireUsername { get; set; }
+
+        [Required]
+        public string HangfirePassword { get; set; }
+
+        [Required]
         public string? ProjectMonitorKey { get; set; }
 
         [Required]

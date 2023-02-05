@@ -19,7 +19,9 @@ namespace MessagingMicroservice.Database.Context
                     ProjectMonitorKey = "",
                     SendGridApiKey = "",
                     TelegramBotApiKey = "",
-                    ApiAuthKey = ""
+                    ApiAuthKey = "",
+                    HangfireUsername = "",
+                    HangfirePassword = ""
                 });
         }
 

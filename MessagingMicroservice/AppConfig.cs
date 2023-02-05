@@ -12,7 +12,8 @@ namespace MessagingMicroservice
         public static string ProjectMonitorKey { get; private set; } = "";
         public static string ApiAuthKey { get; private set; } = "";
         public static string TelegramBotApiKey { get; private set; } = "";
-
+        public static string HFUsername { get; private set; } = "";
+        public static string HFPassword { get; private set; } = "";
         public static void LoadConfig()
         {
             using (var context = new DatabaseContext())
@@ -24,6 +25,9 @@ namespace MessagingMicroservice
                 ProjectMonitorKey = config.ProjectMonitorKey;
                 TelegramBotApiKey = config.TelegramBotApiKey;
                 ApiAuthKey = config.ApiAuthKey;
+                HFUsername = config.HangfireUsername;
+                HFPassword = config.HangfirePassword;
+
                 Log.Information("Config loaded");
             }
         }

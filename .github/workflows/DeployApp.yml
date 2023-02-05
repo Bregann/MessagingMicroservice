@@ -31,7 +31,7 @@ jobs:
         username: ${{ secrets.SSH_USERNAME }}
         key: ${{ secrets.KEY }}
         source: messagingmicroservice.tar
-        target: /root/Docker/
+        target: ${{ secrets.TARGET }}
         
     - name: Stop And Remove Current Container
       uses: appleboy/ssh-action@v0.1.7
@@ -48,7 +48,7 @@ jobs:
         username: ${{ secrets.SSH_USERNAME }}
         key: ${{ secrets.KEY }}
         script: |
-          docker load -i /root/Docker/messagingmicroservice.tar
+          docker load -i ${{ secrets.TARGET }}messagingmicroservice.tar
 
     - name: Start New Container
       uses: appleboy/ssh-action@v0.1.7
@@ -66,4 +66,4 @@ jobs:
         username: ${{ secrets.SSH_USERNAME }}
         key: ${{ secrets.KEY }}
         script: |
-          rm /root/Docker/messagingmicroservice.tar
+          rm ${{ secrets.TARGET }}messagingmicroservice.tar

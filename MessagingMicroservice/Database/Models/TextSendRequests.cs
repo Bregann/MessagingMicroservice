@@ -11,7 +11,7 @@ namespace MessagingMicroservice.Database.Models
         public int RowId { get; set; }
 
         [Required]
-        public int ChatId { get; set; }
+        public long ChatId { get; set; }
 
         [Required]
         public string Content { get; set; }

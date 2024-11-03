@@ -1,5 +1,4 @@
 using MessagingMicroservice;
-using BreganUtils.ProjectMonitor;
 using EmailMicroservice;
 using Hangfire;
 using Hangfire.Dashboard.Dark;
@@ -7,18 +6,10 @@ using Hangfire.PostgreSql;
 using Serilog;
 using Hangfire.Dashboard.BasicAuthorization;
 
-Log.Logger = new LoggerConfiguration().WriteTo.Async(x => x.File("Logs/log.log", retainedFileCountLimit: 7, rollingInterval: RollingInterval.Day)).WriteTo.Console().CreateLogger();
+Log.Logger = new LoggerConfiguration().WriteTo.Async(x => x.File("/app/Logs/log.log", retainedFileCountLimit: 7, rollingInterval: RollingInterval.Day)).WriteTo.Console().CreateLogger();
 Log.Information("Logger Setup");
 
 AppConfig.LoadConfig();
-
-#if DEBUG
-ProjectMonitorConfig.SetupMonitor("debug", AppConfig.ProjectMonitorKey);
-#else
-ProjectMonitorConfig.SetupMonitor("release", AppConfig.ProjectMonitorKey);
-#endif
-
-ProjectMonitorCommon.ReportProjectUp("Messaging Microservice");
 
 var builder = WebApplication.CreateBuilder(args);
 
